@@ -57,12 +57,14 @@ def fetch_csl_data(api, prefix, pids):
     return mods
 
 
-def load_mods_file(filename):
+def _load_mods_files(filenames):
     """Return mods collection from file."""
-    with codecs.open(filename, 'r', 'utf8') as f:
-        mods = f.read()
+    pubs = []
+    for filename in filenames:
+        with codecs.open(filename, 'r', 'utf8') as f:
+            pubs.append(f.read())
 
-    mods = create_mods_collection([mods])
+    mods = create_mods_collection(pubs)
     return mods
 
 
@@ -116,7 +118,7 @@ def _generate(options):
             with codecs.open(filename, 'r', 'utf8') as f:
                 bibs = f.read()
         else:
-            mods = load_mods_file(options.pids[0])
+            mods = _load_mods_files(options.pids)
     else:
         mods = fetch_csl_data(options.oai_api, options.oai_format, options.pids)
 
