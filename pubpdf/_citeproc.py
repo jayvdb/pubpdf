@@ -37,12 +37,10 @@ def generate_html(bib_csl_data, style_name='harvard1'):
 
     bib_cites = [Citation([CitationItem(item)]) for item in bib_source]
 
-    # print(bib_cites[0]['cites'][0]['key'])
-
     for item in bib_cites:
         bibliography.register(item)
 
-    # FIXME: Is this needed?
+    # FIXME: Can this be avoided?
     for item in bib_cites:
         bibliography.cite(item, _cite_warn)
 
