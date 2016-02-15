@@ -11,7 +11,7 @@ BibTex loading
 
 - Parser hangs : https://github.com/brechtm/citeproc-py/issues/53
 
-- add 'issue' and 'volume' to the list of fields??? Not sure if this is needed.
+- add 'issue' to the list of fields???
 
   UserWarning: Unsupported BibTeX field 'issue'
   pes:4985
@@ -63,25 +63,10 @@ Thesis are not handled due to non-standard genre.
 
 The error is: Cannot identify TYPE in reference 1  une_thesis-20090324-065555 (defaulting to @Misc)
 
+unknown
+-------
 
----------
+\ldotsthis and \ldots in https://e-publications.une.edu.au/vital/access/manager/Repository/une:1206
+\ldotsthis looks like a bibutils problem.
 
-[jayvdb@localhost citeproc-py]$ git checkout -b ap-2016-cherries
-Switched to a new branch 'ap-2016-cherries'
-[jayvdb@localhost citeproc-py]$ git cherry-pick py32
-[ap-2016-cherries 085ffc7] Remove Python 3.2 travis build
- Date: Sun Feb 14 20:37:57 2016 +1100
- 1 file changed, 1 deletion(-)
-[jayvdb@localhost citeproc-py]$ git cherry-pick page-number-parsing
-[ap-2016-cherries 178cb01] BibTeX: Relax page number parsing
- Date: Sun Feb 14 20:33:22 2016 +1100
- 2 files changed, 9 insertions(+), 2 deletions(-)
-[jayvdb@localhost citeproc-py]$ git cherry-pick bibtex-literal-date
-[ap-2016-cherries 4a1d12b] BibTeX literal dates
- Date: Mon Feb 15 09:19:16 2016 +1100
- 1 file changed, 21 insertions(+), 2 deletions(-)
-[jayvdb@localhost citeproc-py]$ git cherry-pick macros
-[ap-2016-cherries b095e06] Add some macros
- Date: Mon Feb 15 09:27:26 2016 +1100
- 1 file changed, 4 insertions(+)
-
+ldotsShouts in https://e-publications.une.edu.au/vital/access/manager/Repository/une:1452
