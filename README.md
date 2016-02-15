@@ -14,7 +14,13 @@ If you need to compile it from source, such as on Windows:
 
 1. Fetch the latest tarball from https://sourceforge.net/projects/bibutils/files/
 
-2. Unpack it using `tar` and, in the new directory, run: `./configure; make; make install`
+2. Unpack it using `tar` and, in the new directory, run:
+
+     ```sh
+     ./configure --install-dir /usr/local/bin --install-lib /usr/local/bin
+     make
+     make install
+     ```
 
 ## Installing pubpdf
 ```sh
