@@ -1,7 +1,8 @@
 configargparse
 --------------
-config file doesnt allow ';' in html-preamble, preventing css rules.
-https://github.com/bw2/ConfigArgParse/issues/37
+
+- config file doesnt allow ';' in html-preamble, preventing css rules, etc.
+  https://github.com/bw2/ConfigArgParse/issues/37
 
 
 citeproc
@@ -11,26 +12,17 @@ BibTex loading
 
 - Parser hangs : https://github.com/brechtm/citeproc-py/issues/53
 
-- add 'issue' to the list of fields???
+- add support for 'issue'/'number' combination.
 
-  UserWarning: Unsupported BibTeX field 'issue'
-  pes:4985
-  https://e-publications.une.edu.au/vital/access/manager/Repository/une:1335
+  when a journal article has both issue and number, pubpdf drops the number
+  so that citeproc-py correctly captures the issue.
+  https://github.com/brechtm/citeproc-py/issues/57
 
-/home/jayvdb/projects/citeproc/citeproc-py/citeproc/source/bibtex/bibtex.py:96: UserWarning: Unsupported BibTeX field 'issue'
-  warn("Unsupported BibTeX field '{}'".format(field))
-article une-20100224-144351
 
-xml2bib: Processed 1 references.
-/home/jayvdb/projects/citeproc/citeproc-py/citeproc/source/bibtex/bibtex.py:96: UserWarning: Unsupported BibTeX field 'issue'
-  warn("Unsupported BibTeX field '{}'".format(field))
-article une-20131105-095257
-
-  Cant reproduce with 'volume' yet.
-
-- https://e-publications.une.edu.au/vital/access/manager/Repository/une:173
-  Invalid page number range '11.1-11.21'
+- Invalid page number range '11.1-11.21'
   https://github.com/brechtm/citeproc-py/pull/51
+
+  e.g. https://e-publications.une.edu.au/vital/access/manager/Repository/une:173
 
 - date parsing fails on a year of '2010/2011'
   https://github.com/brechtm/citeproc-py/pull/54
@@ -43,7 +35,8 @@ article une-20131105-095257
 - add language
   https://e-publications.une.edu.au/vital/access/manager/Repository/une:1
 
-- add abstract : https://e-publications.une.edu.au/vital/access/manager/Repository/une:1
+- add abstract: waiting for better latex support
+  https://github.com/jayvdb/pubpdf/issues/3
   
 - add contents?
   pes:3588 or pes:4601
@@ -56,17 +49,19 @@ article une-20131105-095257
   UserWarning: Unsupported BibTeX field 'school'
   https://e-publications.une.edu.au/vital/access/manager/Repository/une:1179
 
+
 xml2bib
 -------
 
-Thesis are not handled due to non-standard genre.
+- UNE thesis are not handled due to non-standard genre in the mods.
 
-The error is: Cannot identify TYPE in reference 1  une_thesis-20090324-065555 (defaulting to @Misc)
+  The error is: Cannot identify TYPE in reference 1  une_thesis-20090324-065555 (defaulting to @Misc)
 
-unknown
--------
+- Four bibutils latex macros are not wrapped in {}, causing BibTex parsing
+  problems: https://github.com/jayvdb/pubpdf/issues/4
 
-\ldotsthis and \ldots in https://e-publications.une.edu.au/vital/access/manager/Repository/une:1206
-\ldotsthis looks like a bibutils problem.
+    \ldots
+    \enspace
+    \emspace
+    \thinspace
 
-ldotsShouts in https://e-publications.une.edu.au/vital/access/manager/Repository/une:1452

@@ -41,6 +41,12 @@ def convert_mods_to_bib(mods):
 
     bibs = convert(mods, 'xml', 'bib', encoding='utf8')
 
+    # workaround bibutils emitting issue & number,
+    # and citeproc-py only parsing number.
+    if 'issue=' in bibs:
+        bibs = re.sub('number=.*', '', bibs)
+        bibs = bibs.replace('issue=', 'number=')
+
     return bibs.replace('\nand ', ' and ')
 
 
