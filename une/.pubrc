@@ -1,0 +1,7 @@
+oai-api=https://e-publications.une.edu.au/oaiprovider/
+oai-format=mods
+oai-identifier-prefix=une
+csl-style=cell-une
+csl-style-dir=.
+group-by-type=True
+html-preamble=<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr"> <h1>Official publication profile: [name]</h1> <small>Note: Listing includes verified HERDC eligible publications and NTROs since 2010.</small>
