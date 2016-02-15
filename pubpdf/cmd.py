@@ -135,8 +135,8 @@ def _generate(options):
     if not bibs:
         bibs = convert_mods_to_bib(mods)
 
-    with codecs.open(options.output_file + '.bib', 'w', 'utf8') as output_file:
-        output_file.write(bibs)
+        with codecs.open(options.output_file + '.bib', 'w', 'utf8') as output_file:
+            output_file.write(bibs)
 
     pubs = convert_bibtex_to_csl_data(bibs)
 
