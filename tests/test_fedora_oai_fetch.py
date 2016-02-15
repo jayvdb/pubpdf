@@ -2,8 +2,8 @@ import unittest
 
 from oaipmh.error import IdDoesNotExistError
 
-from pubpdf._fedora_oai_fetch import get_oai_client
-from pubpdf._fedora_oai_fetch import get_oai_document_metadata
+from pubpdf._oai_fetch import get_oai_client
+from pubpdf._oai_fetch import get_oai_document_metadata
 
 
 class OAITest(unittest.TestCase):
