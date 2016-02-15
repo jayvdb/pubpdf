@@ -14,6 +14,8 @@ install:
 
   - pip install tox-travis
 
+  - pip install git+https://github.com/jayvdb/citeproc-py@ap-2016-cherries#egg=citeproc-py
+
 script:
   - tox
 
